@@ -49,6 +49,8 @@ Date: & XX XX XXXX
 
 \section{Introduction}
 
+In this paper I will try to build an model 
+
 
 \section{Description of the data}
 
@@ -56,11 +58,13 @@ Date: & XX XX XXXX
 
 \subsection{Part 1 the dynamic univariate model}
 
-estimating an ar model
+
+\begin{equation}
+    S_t = \delta + \sum_{i=1}^{k} \theta_i S_{t-i} + \gramma_1 FirstTrDay_t + \gramma_1 LastTrDay_t + \kappa isJan_t + .... + f_t
+\end{equation}
 
 
-
-
+estimating an ar model and saving the resituel as $f_t$
 
 \section{Empirical analysis}
 
@@ -69,19 +73,12 @@ estimating an ar model
 first we build an auto regressiv model for the st. Start by visuelle evaluation the acf to determind the lag length.
 
 
-\input{Table/Table_1}[
+\input{Table/Table_1}
 
-
-
-
-
+therefor i will use an ar(p) laged model to 
 
 
 \section{Conclusion}
-
-
-
-
 
 }
 
