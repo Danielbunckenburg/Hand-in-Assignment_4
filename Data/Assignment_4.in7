@@ -1,23 +1,25 @@
 pcgive 700
 data Assignment_4.bn7
->Date            1  1 5598  1  1 32 Assignment_4 23-11-2021 10:37:49 date
->DAX             1  1 5598  1  1 44848 Assignment_4 23-11-2021 10:37:49
->logDAX          1  1 5598  1  1 89664 Assignment_4 23-11-2021 10:37:49
->DlogDAX         1  1 5598  1  1 134480 Assignment_4 23-11-2021 10:37:49
->Vol             1  1 5598  1  1 179296 Assignment_4 23-11-2021 10:37:49
->logVol          1  1 5598  1  1 224112 Assignment_4 23-11-2021 10:37:49
->logVolMA50      1  1 5598  1  1 268928 Assignment_4 23-11-2021 10:37:49
->FirstTrDay      1  1 5598  1  1 313744 Assignment_4 23-11-2021 10:37:49
->LastTrDay       1  1 5598  1  1 358560 Assignment_4 23-11-2021 10:37:49
->isJan           1  1 5598  1  1 403376 Assignment_4 23-11-2021 10:37:49
->isFeb           1  1 5598  1  1 448192 Assignment_4 23-11-2021 10:37:49
->isMar           1  1 5598  1  1 493008 Assignment_4 23-11-2021 10:37:49
->isApr           1  1 5598  1  1 537824 Assignment_4 23-11-2021 10:37:49
->isMay           1  1 5598  1  1 582640 Assignment_4 23-11-2021 10:37:49
->isJun           1  1 5598  1  1 627456 Assignment_4 23-11-2021 10:37:49
->isJul           1  1 5598  1  1 672272 Assignment_4 23-11-2021 10:37:49
->isAug           1  1 5598  1  1 717088 Assignment_4 23-11-2021 10:37:49
->isSep           1  1 5598  1  1 761904 Assignment_4 23-11-2021 10:37:49
->isOct           1  1 5598  1  1 806720 Assignment_4 23-11-2021 10:37:49
->isNov           1  1 5598  1  1 851536 Assignment_4 23-11-2021 10:37:49
->isDec           1  1 5598  1  1 896352 Assignment_4 23-11-2021 10:37:49
+>Date            1  1 5598  1  1 32 Assignment_4 11-12-2021 18:25:35 date
+>DAX             1  1 5598  1  1 44848 Assignment_4 11-12-2021 18:25:35
+>logDAX          1  1 5598  1  1 89664 Assignment_4 11-12-2021 18:25:35
+>DlogDAX         1  1 5598  1  1 134480 Assignment_4 11-12-2021 18:25:35
+>Vol             1  1 5598  1  1 179296 Assignment_4 11-12-2021 18:25:35
+>logVol          1  1 5598  1  1 224112 Assignment_4 11-12-2021 18:25:35
+>logVolMA50      1  1 5598  1  1 268928 Assignment_4 11-12-2021 18:25:35
+>FirstTrDay      1  1 5598  1  1 313744 Assignment_4 11-12-2021 18:25:35
+>LastTrDay       1  1 5598  1  1 358560 Assignment_4 11-12-2021 18:25:35
+>isJan           1  1 5598  1  1 403376 Assignment_4 11-12-2021 18:25:35
+>isFeb           1  1 5598  1  1 448192 Assignment_4 11-12-2021 18:25:35
+>isMar           1  1 5598  1  1 493008 Assignment_4 11-12-2021 18:25:35
+>isApr           1  1 5598  1  1 537824 Assignment_4 11-12-2021 18:25:35
+>isMay           1  1 5598  1  1 582640 Assignment_4 11-12-2021 18:25:35
+>isJun           1  1 5598  1  1 627456 Assignment_4 11-12-2021 18:25:35
+>isJul           1  1 5598  1  1 672272 Assignment_4 11-12-2021 18:25:35
+>isAug           1  1 5598  1  1 717088 Assignment_4 11-12-2021 18:25:35
+>isSep           1  1 5598  1  1 761904 Assignment_4 11-12-2021 18:25:35
+>isOct           1  1 5598  1  1 806720 Assignment_4 11-12-2021 18:25:35
+>isNov           1  1 5598  1  1 851536 Assignment_4 11-12-2021 18:25:35
+>isDec           1  1 5598  1  1 896352 Assignment_4 11-12-2021 18:25:35
+>st              1  1 5598  1  1 941168 Assignment_4 11-12-2021 18:25:35
+>dst             1  1 5598  1  1 985984 Assignment_4 11-12-2021 18:25:35

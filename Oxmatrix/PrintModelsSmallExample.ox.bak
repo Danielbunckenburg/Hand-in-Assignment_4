@@ -14,38 +14,53 @@
 #import <PrintModels>
 
 run_1()
+  {
+  //--- Ox code for EQ( 1)
+  decl model = new PcGive();
 
-{
- // This program requires a licenced version of PcGive Professional.
-	//--- Ox code for EQ( 1)
-	decl model = new PcGive();
+  model.Load("GDP.in7");
+  model.Deterministic(-1);
 
-	model.Load("C:\\Users\\Bruger\\OneDrive - University of Copenhagen\\Polit 2021\\Economics2\\Hand-in-Assignment_4\\Data\\Assignment_4.in7");
-	model.Deterministic(-1);
+  model.Select(Y_VAR, {"dy", 0, 0});
+  model.Select(X_VAR, {"Constant", 0, 0});
+  model.Select(Y_VAR, {"dy", 1, 3});
 
-	model.Select("Y", {"st", 0, 0});
-	model.Select("X", {"Constant", 0, 0});
-	model.Select("Y", {"st", 1, 6});
-	model.Select("X", {"isJan", 0, 0});
-	model.Select("X", {"isFeb", 0, 0});
-	model.Select("X", {"isMar", 0, 0});
-	model.Select("X", {"isApr", 0, 0});
-	model.Select("X", {"isMay", 0, 0});
-	model.Select("X", {"isJun", 0, 0});
-	model.Select("X", {"isJul", 0, 0});
-	model.Select("X", {"isAug", 0, 0});
-	model.Select("X", {"isSep", 0, 0});
-	model.Select("X", {"isOct", 0, 0});
-	model.Select("X", {"isNov", 0, 0});
-	model.Select("X", {"isDec", 0, 0});
-	model.SetSelSampleByDates(dayofcalendar(2000, 1, 19), dayofcalendar(2021, 11, 22));
-	model.SetMethod("OLS");
-	model.Estimate();
-	model.TestSummary();
+  model.SetSelSample(1975, 1, 2015, 3);
+  model.SetMethod(M_OLS);
+  model.Estimate();
+  model.TestSummary();
 
-	return model;
-	}
- 
+  // ------------------------------------------
+  // Replace "delete model;" by "return model;"
+  // ------------------------------------------
+  // delete model;
+  return model;
+  }
+
+run_2()
+  {
+  //--- Ox code for EQ( 1)
+  decl model = new PcGive();
+
+  model.Load("GDP.in7");
+  model.Deterministic(-1);
+
+  model.Select(Y_VAR, {"dy", 0, 0});
+  model.Select(X_VAR, {"Constant", 0, 0});
+  model.Select(Y_VAR, {"dy", 1, 2});
+
+  model.SetSelSample(1975, 1, 2015, 3);
+  model.SetMethod(M_OLS);
+  model.Estimate();
+  model.TestSummary();
+
+  // ------------------------------------------
+  // Replace "delete model;" by "return model;"
+  // ------------------------------------------
+  // delete model;
+  return model;
+  }
+
 
 main()
   {
@@ -56,20 +71,21 @@ main()
   // run_1();
   // run_2();
   decl m1 = run_1();
+  decl m2 = run_2();
 
   // ----------------------------
   // Use the PrintModels class by
   // adding the following lines.
   // ----------------------------
   decl printmodels = new PrintModels();       // Creates a new class object called "printmodels", which we use to print results of the estimated models we add in the next line.
-  printmodels.AddModels(m1 );             // Select models to print.
-  printmodels.SetModelNames({"(1)"});   // Set the model names in the table.
+  printmodels.AddModels(m1, m2 );             // Select models to print.
+  printmodels.SetModelNames({"(1)","(2)"});   // Set the model names in the table.
   printmodels.SetPrintFormat(FALSE,TRUE,4,3); // Print format: Use SE , use scientific notation, precision of estimates, precision of standard errors/t-values
   printmodels.PrintTable();                   // Produce tex-table.
 
   // ------------------------------
   // Delete everything from memory.
   // ------------------------------
-  delete m1;
+  delete m1,m2;
   delete printmodels;
   }
