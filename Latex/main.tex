@@ -7,6 +7,7 @@
 \usepackage{tabularx} % Package for table
 \usepackage{fontspec}
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 \setmainfont{Arial}
 
@@ -27,20 +28,6 @@
 
 \onehalfspacing
 
-\noindent This is a template for the setup itself. The requirements for which information to include varies. You can therefore not simply use the template for your own dissertation. You can get more information about the requirements at your own study office!
-\begin{table}[h]
-\def\arraystretch{1.5}
-\begin{tabularx}{\textwidth}{l X}
-Institute: & {[Institute for Xxxxx]}  \\
-Department & {[Department for Xxxxx]} \\
-Author(s): & {[Name]} \\
-Title and subtitle: & {[Title and subtitle of thesis]} \\
-Description: & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor rhoncus dui, vehicula pellentesque odio convallis id. Vestibulum mollis nulla ut sem luctus dictum. Sed scelerisque feugiat arcu, quis faucibus lorem viverra id. Aenean dignissim metus eu ligula sagittis, at commodo magna suscipit. \\
-Advisor: & {[Name]} \\
-Date: & XX XX XXXX
-\end{tabularx}
-\end{table}
-\newpage
 
 \tableofcontents
 \newpage
@@ -51,6 +38,7 @@ Date: & XX XX XXXX
 
 In this paper I will try to build an model 
 
+if you have lowere volume then it gets easyere to move the prices and thereby the volitialty will go up. 
 
 \section{Description of the data}
 
@@ -58,15 +46,81 @@ In this paper I will try to build an model
 
 \subsection{Part 1 the dynamic univariate model}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{Figure/AFC_model_1.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 
 \begin{equation}
     S_t = \delta + \sum_{i=1}^{k} \theta_i S_{t-i} + \gramma_1 FirstTrDay_t + \gramma_1 LastTrDay_t + \kappa isJan_t + .... + f_t
 \end{equation}
 
-
 estimating an ar model and saving the resituel as $f_t$
 
+after that I will use the ceil function on the resituels to make the variable into an indicator function. And after that I will multiply it with the ft to get $f^{pos}_t$.
+
+\subsection{part 2 - the GARCH model on stock returns}
+
+here we are going to estimate an GARCH model using the error term from the univariate model above. 
+
+general GARCH model is on the form
+
+\begin{equation}
+    y_t = \delta + \theta y_{t-1} + \epsilon_t
+\end{equation}
+
+\begin{equation}
+    \epsilon_t = \sigma_t Z_t
+\end{equation}
+
+conditional variance 
+
+\begin{align}
+    \sigma_t^2 = \pi + \alpha \epsilon_{t-1}^2 + \beta \sigma_{t-1}^2  
+\end{align}
+
+unconditional variance 
+
+\begin{equation}
+    \frac{\pi}{1-\alpha -\beta}
+\end{equation}
+
+unconditional mean 
+
+\begin{equation}
+    E(y_t) = \frac{\delta}{1-\theta}
+\end{equation}
+
+but in this model we have an model that is alternative so the model looks like 
+
+\begin{align}
+     y_t = DlogDAX \\
+     y_t = \delta + \theta y_{t-1} + \gamma_1 f^{pos}_t + \epsilon_t\\
+     \epsilon_t = \sigma_t z_t \\
+     \sigma^2_t = \pi + \alpha \epsilon^2_{t-1} + \beta \sigma^2_{t-1}\\
+     E(y_t) = \frac{\delta}{1-\theta}\\
+     E(y_t, f_t) = \frac{\delta + \gamma_1}{1-\theta}\\
+     \sigma^2 = \frac{\pi}{a-\alpha - \beta}\\
+\end{align}
+
+we want to investiagate if $\gamma_1 > 0$ so the $H_0: \gramma_1 = 0 $ and the $H_a : \gamma_1 =! 0$.
+
+
+
+
+\newpage
+
+
+
+
+
+
 \section{Empirical analysis}
+
+
+
 
 \subsection{The dynamic univariate model}
 
@@ -75,7 +129,17 @@ first we build an auto regressiv model for the st. Start by visuelle evaluation 
 
 \input{Table/Table_1}
 
+\newpage
+
 therefor i will use an ar(p) laged model to 
+
+\subsection{Model for daily change in the stock marked}
+
+I will build an GARCH(1,1) model where I include the variable
+
+
+
+
 
 
 \section{Conclusion}
